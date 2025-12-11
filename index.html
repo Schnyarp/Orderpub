@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Order.pub — Premium Domain For Sale</title>
+  <meta name="description" content="Order.pub — premium domain ideal for pub & bar ordering platforms, draft-management apps, table ordering systems, and nightlife marketplaces. Submit an offer to purchase." />
+  <meta property="og:title" content="Order.pub — Premium Domain For Sale" />
+  <meta property="og:description" content="Order.pub — brandable domain for pub ordering, taproom apps, POS integrations, and nightlife discovery. Contact domain@order.pub" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#2b1f14" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --max-width:1120px;
+      --bg-top:#15110e;
+      --bg-mid:#2b1f14;
+      --panel:#ffffff;
+      --muted:#b5a79c;
+      --ink:#1b1b1b;
+      --wood:#3b2a20;
+      --amber:#f3b047;
+      --chalk:#dcd7d2;
+      --radius:16px;
+      --shadow: 0 36px 120px rgba(8,8,8,0.6);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0}
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:36px 20px;
+      color:var(--chalk);
+      background:
+        radial-gradient(700px 240px at 16% 12%, rgba(243,176,71,0.03), transparent 12%),
+        linear-gradient(180deg,var(--bg-top) 0%, var(--bg-mid) 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      overflow-x:hidden;
+    }
+
+    /* Chosen look: "Cozy Taproom"
+       - warm wood counter band, chalkboard menu accent, filament string lights and amber highlights
+       - friendly, atmospheric for pubs, taprooms and bar-ordering products
+       - decorative layers pointer-events:none so they don't block UI
+    */
+    .bg { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:visible; }
+
+    .wood-band {
+      position:fixed;
+      left:50%;
+      top:8%;
+      transform:translateX(-50%);
+      width:1100px;
+      height:340px;
+      z-index:0;
+      border-radius:22px;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(59,42,33,0.96), rgba(47,34,28,0.94)),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='340'><g fill='%23000000' fill-opacity='0.02'><rect x='20' y='18' width='120' height='18' rx='6'/><rect x='160' y='18' width='120' height='18' rx='6'/></g></svg>");
+      mix-blend-mode:screen;
+      box-shadow: inset 0 30px 80px rgba(0,0,0,0.35);
+      opacity:0.98;
+    }
+
+    .chalkboard {
+      position:fixed;
+      left:6%;
+      top:8%;
+      width:320px;
+      height:220px;
+      z-index:0;
+      pointer-events:none;
+      opacity:0.06;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 220'><g fill='%23000000' fill-opacity='0.03'><rect x='8' y='8' width='304' height='36' rx='4'/><rect x='8' y='56' width='140' height='18' rx='4'/></g></svg>");
+      background-repeat:no-repeat;
+      background-size:contain;
+      mix-blend-mode:screen;
+    }
+
+    .string-lights {
+      position:fixed;
+      right:6%;
+      top:6%;
+      width:320px;
+      height:160px;
+      z-index:0;
+      pointer-events:none;
+      opacity:0.05;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 160'><g fill='%23f3b047' fill-opacity='0.12'><circle cx='40' cy='40' r='6'/><circle cx='100' cy='30' r='6'/><circle cx='160' cy='40' r='6'/><circle cx='220' cy='30' r='6'/></g></svg>");
+      background-repeat:no-repeat;
+      background-size:contain;
+      mix-blend-mode:screen;
+    }
+
+    .floaters { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:visible; }
+
+    .badge {
+      position:absolute;
+      width:72px;
+      height:72px;
+      background-size:contain;
+      background-repeat:no-repeat;
+      opacity:0.12;
+      will-change:transform,opacity;
+      filter: drop-shadow(0 14px 36px rgba(0,0,0,0.6));
+    }
+
+    @keyframes sway {
+      0% { transform: translateY(0) rotate(-6deg); }
+      50% { transform: translateY(-14px) rotate(6deg); }
+      100% { transform: translateY(0) rotate(-6deg); }
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      padding:28px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.02);
+      position:relative;
+      z-index:2;
+    }
+
+    header{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:12px;
+    }
+
+    .brand{ display:flex; gap:12px; align-items:center; }
+    .logo{
+      width:76px;height:76px;border-radius:12px;
+      background: linear-gradient(135deg,var(--amber), #c57a2e);
+      color:var(--wood); display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.4);
+      flex-shrink:0;
+    }
+
+    h1{ margin:0; font-size:22px; color:var(--chalk); }
+    p.lead{ margin:6px 0 0; color:var(--muted); font-size:14px; max-width:740px; }
+
+    .grid{ display:grid; grid-template-columns:1fr 360px; gap:20px; align-items:start; margin-top:12px; }
+
+    .hero {
+      padding:18px; border-radius:12px; color:var(--chalk);
+      display:flex; gap:18px; align-items:center; justify-content:space-between;
+      background: linear-gradient(90deg, rgba(0,0,0,0.12), rgba(0,0,0,0.06));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero h2{ margin:0 0 8px 0; font-size:20px; color:var(--amber) }
+    .hero p{ margin:0; color:var(--muted) }
+
+    .panel {
+      background: #fff; color:var(--ink); padding:18px; border-radius:12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.03);
+    }
+
+    h2.section { margin-top:0; font-size:18px; color:var(--wood) }
+    .features ul{ margin:0; padding-left:18px; color:var(--muted) }
+    .features li{ margin-bottom:10px }
+
+    .samples { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap }
+    .sample { min-width:120px; padding:10px; border-radius:10px; background:#fff; color:var(--muted); font-weight:700; text-align:center }
+
+    .cta-row{ display:flex; gap:12px; margin-top:14px; align-items:center; flex-wrap:wrap }
+    .btn{ display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px; font-weight:800; cursor:pointer; text-decoration:none; border:0; }
+    .btn-primary{ background: linear-gradient(90deg,var(--amber), #d58b3a); color:#3b2a20; box-shadow: 0 10px 30px rgba(0,0,0,0.18) }
+    .btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted) }
+
+    form label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px }
+    form input, form textarea { width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); background:#fff; color:var(--ink); font-size:14px; margin-bottom:12px }
+    form textarea{ min-height:110px; resize:vertical }
+
+    .contact-card{ position:sticky; top:28px; align-self:start; padding:16px; border-radius:12px; background:#fff; color:var(--ink); border:1px solid rgba(0,0,0,0.03); box-shadow:0 8px 26px rgba(0,0,0,0.06); max-width:360px; }
+
+    .contact-card h3{ margin:0 0 8px 0; font-size:16px; color:var(--wood) }
+    .contact-email a{ display:inline-block; font-weight:800; color:var(--amber); text-decoration:none }
+
+    .resources { margin-top:12px; font-size:13px; color:var(--muted); border-top:1px dashed rgba(0,0,0,0.04); padding-top:12px }
+    .resources a { color:var(--amber); font-weight:700; text-decoration:none }
+
+    footer{ margin-top:18px; color:var(--muted); font-size:13px; text-align:center }
+
+    @media (max-width:980px){
+      .grid{ grid-template-columns: 1fr; gap:16px }
+      .contact-card{ position:relative; top:auto; width:100% }
+      .container{ padding:20px }
+      .wood-band, .chalkboard, .string-lights, .floaters { display:none }
+      .logo{ width:64px; height:64px }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "url":"https://order.pub",
+        "name":"Order.pub",
+        "description":"Order.pub — premium domain for pub & bar ordering platforms, taproom apps, table ordering and nightlife marketplaces."
+      },
+      {
+        "@type":"ContactPoint",
+        "contactType":"sales",
+        "email":"domain@order.pub"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="wood-band" aria-hidden="true"></div>
+    <div class="chalkboard" aria-hidden="true"></div>
+    <div class="string-lights" aria-hidden="true"></div>
+    <div class="floaters" id="floaters" aria-hidden="true"></div>
+  </div>
+
+  <main class="container" role="main" aria-labelledby="main-heading">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">OP</div>
+        <div>
+          <h1 id="main-heading">Order.pub</h1>
+          <p class="lead">Premium domain for pub & bar ordering, taproom apps, table service, and nightlife discovery products.</p>
+        </div>
+      </div>
+
+      <div style="text-align:right">
+        <div style="color:var(--muted);font-size:13px">For inquiries</div>
+        <div class="contact-email"><a href="mailto:domain@order.pub">domain@order.pub</a></div>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Main content">
+      <div>
+        <div class="hero" role="note" aria-live="polite" aria-labelledby="hero-title">
+          <div>
+            <h2 id="hero-title">A name that reads like the product</h2>
+            <p>Order.pub is direct and memorable — ideal for mobile ordering, draft & inventory tools, table ordering systems, loyalty for bars, and city-wide nightlife marketplaces.</p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#" id="inquireBtn">Make an Offer</a>
+              <a class="btn btn-ghost" href="mailto:domain@order.pub?subject=Domain%20Offer%20-%20Order.pub">Email Now</a>
+            </div>
+          </div>
+
+          <div style="min-width:180px; text-align:center">
+            <div style="color:var(--muted); font-size:13px">Domain</div>
+            <div style="font-weight:900; font-size:18px; margin-top:6px; color:var(--chalk)">Order.pub</div>
+            <div style="color:var(--muted); font-size:13px; margin-top:8px">Serious offers only.</div>
+          </div>
+        </div>
+
+        <article class="panel" aria-labelledby="why-title" style="margin-top:16px">
+          <h2 id="why-title" class="section">Why Order.pub?</h2>
+          <p class="lead">A short, category-first .pub name that clearly signals ordering and hospitality — great for consumer apps, merchant integrations, taproom POS, booking & reservation add-ons, and nightlife services.</p>
+
+          <div class="features" style="margin-top:12px">
+            <ul>
+              <li>Instant product clarity — users and merchants immediately understand the site's purpose</li>
+              <li>Works for mobile/web ordering, table service, POS & inventory integrations, and loyalty</li>
+              <li>Brandable across signage, apps, partner portals and marketing</li>
+            </ul>
+          </div>
+
+          <div class="samples" aria-hidden="false">
+            <div class="sample">Mobile Pub Ordering</div>
+            <div class="sample">Taproom Inventory & POS</div>
+            <div class="sample">Table Service & Reservations</div>
+            <div class="sample">Nightlife Marketplace</div>
+          </div>
+        </article>
+
+        <article class="panel" style="margin-top:16px" aria-labelledby="about-title">
+          <h3 id="about-title" style="margin-top:0">About this domain</h3>
+          <p class="lead">Order.pub is a premium domain available for transfer.</p>
+
+          <ul style="color:var(--muted);margin-top:12px">
+            <li>Well-suited to founders, POS vendors, hospitality tech startups and venue operators</li>
+            <li>Useful for integrations with payment processors, delivery partners, reservation systems and analytics</li>
+            <li>We use escrow to ensure a smooth, secure transfer for both buyer and seller.</li>
+          </ul>
+
+          <div class="resources" aria-labelledby="resources-title">
+            <div id="resources-title" style="font-weight:800; margin-bottom:8px">Helpful resource</div>
+            <div><a href="https://corelli.com/domains.html" target="_blank" rel="noopener noreferrer">How To Choose A Domain Name</a></div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="contact-card" aria-label="Contact & offer">
+        <div>
+          <h3 style="margin-top:0">Contact & Offer</h3>
+          <p style="margin-top:6px;color:var(--muted)">Submit an offer — this form opens your email client with the details prefilled. Or email <a href="mailto:domain@order.pub" class="contact-email">domain@order.pub</a>.</p>
+
+          <form id="inquiryForm" onsubmit="handleSubmit(event)" aria-label="Domain offer form">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+
+            <label for="email">Your email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="offer">Your offer (USD)</label>
+            <input id="offer" name="offer" type="text" placeholder="Enter your offer (USD)" required />
+
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" type="text" placeholder="Your company or organization" />
+
+            <label for="country">Country</label>
+            <input id="country" name="country" type="text" placeholder="Your country" required />
+
+            <label for="phone">Phone number (optional)</label>
+            <input id="phone" name="phone" type="tel" />
+
+            <label for="message">Message (questions, timeline, escrow preference)</label>
+            <textarea id="message" name="message" placeholder="Hi — I'm submitting an offer for Order.pub. Please share transfer instructions and next steps."></textarea>
+
+            <button class="btn btn-primary" type="submit" style="width:100%; margin-top:6px">Send Offer</button>
+          </form>
+
+          <footer style="margin-top:10px; text-align:left; color:var(--muted); font-size:13px">
+            Prefer a direct email? <a href="mailto:domain@order.pub" style="color:var(--amber)" class="contact-email">domain@order.pub</a>
+          </footer>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      &copy; 2025 Order.pub. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // floating pub-themed badges: pint, pretzel, tap, pin (data-URI SVGs)
+    (function placeFloaters(){
+      const layer = document.getElementById('floaters');
+      if(!layer) return;
+
+      const svgs = {
+        pint: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M20 10h24v32a10 10 0 0 1-10 10H30a10 10 0 0 1-10-10V10z' fill='%23FFF6E0' stroke='%23000000' stroke-opacity='0.04'/></svg>`),
+        pretzel: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M12 34c6-14 22-18 36-10 0 0-6 10-16 12-10 2-20 8-20-2z' fill='%23FFE8C2'/></svg>`),
+        tap: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='26' y='12' width='12' height='30' rx='2' fill='%23FFFFFF' stroke='%23000000' stroke-opacity='0.04'/><path d='M20 44h24' stroke='%23000000' stroke-opacity='0.04' stroke-width='2'/></svg>`),
+        pin: encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 6c-8 12-12 18-12 24 0 8 12 16 12 16s12-8 12-16c0-6-4-12-12-24z' fill='%23F3B047'/></svg>`)
+      };
+
+      const items = [
+        {svg:svgs.pint, left:'12%', top:'18%', size:88, dur:9000},
+        {svg:svgs.pretzel, left:'78%', top:'16%', size:72, dur:11000},
+        {svg:svgs.tap, left:'48%', top:'66%', size:72, dur:10000},
+        {svg:svgs.pin, left:'84%', top:'54%', size:64, dur:12000}
+      ];
+
+      items.forEach(it=>{
+        const el = document.createElement('div');
+        el.className = 'badge';
+        el.style.left = it.left;
+        el.style.top = it.top;
+        el.style.width = it.size + 'px';
+        el.style.height = it.size + 'px';
+        el.style.backgroundImage = `url("data:image/svg+xml;utf8,${it.svg}")`;
+        el.style.animation = `sway ${it.dur}ms ease-in-out ${Math.random()*1200}ms infinite`;
+        el.style.opacity = 0.06 + Math.random()*0.18;
+        layer.appendChild(el);
+      });
+    })();
+
+    // Compose mailto and open user's email client with form contents
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const offer = document.getElementById('offer').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const country = document.getElementById('country').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Domain Offer - Order.pub');
+      const bodyText =
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Company: ${company || '(not provided)'}\n` +
+        `Offer (USD): ${offer}\n` +
+        `Country: ${country}\n` +
+        `Phone: ${phone || '(not provided)'}\n\n` +
+        `Message:\n${message}\n\n---\nSent from Order.pub offer form`;
+
+      window.location.href = `mailto:domain@order.pub?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
+    }
+
+    document.getElementById('inquiryForm').addEventListener('submit', handleSubmit);
+
+    // Inquire button: scroll to form on mobile, open mailto on desktop
+    document.getElementById('inquireBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const form = document.getElementById('inquiryForm');
+      if(window.innerWidth < 900){
+        form.scrollIntoView({behavior:'smooth', block:'center'});
+        form.querySelector('input')?.focus();
+      } else {
+        const subject = encodeURIComponent('Domain Offer - Order.pub');
+        const body = encodeURIComponent('Hi — I would like to make an offer for Order.pub. Please reply with transfer instructions and next steps.');
+        window.location.href = `mailto:domain@order.pub?subject=${subject}&body=${body}`;
+      }
+    });
+  </script>
+</body>
+</html>
